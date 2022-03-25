@@ -70,7 +70,7 @@ asdf global mage latest
 ## Example Magefile
 
 ```go
-//+build mage
+//go:build mage
 
 package main
 
@@ -88,6 +88,13 @@ func Build() error {
 ```
 
 Run the above `Build` target by simply running `mage build` in the same directory as the magefile.
+
+## Magefiles directory
+
+If you create your Magefile or files within a directory named `magefiles` And there is no Magefile in your current directory, 
+`mage` will default to the directory as the source for your targets while keeping the current directory as working one.
+
+The result is the equivalent of running `mage -d magefiles -w .`
 
 ## Demo
 
